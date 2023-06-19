@@ -36,14 +36,16 @@ const seattle = {
     // console.log(this.customersEachHour);
   },
 
-  calcCookiesEachHour: function() {
+  calcCookiesEachHour: function () {
     for (let i = 0; i < hours.length; i++) {
-  const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerCust);
-  this.cookiesEachHour.push(oneHour);
-  this.totalDailyCookies += oneHour;
-  console.log(this.cookiesEachHour);
-    }  
-},
+      const oneHour = Math.ceil(
+        this.customersEachHour[i] * this.avgCookiesPerCust
+      );
+      this.cookiesEachHour.push(oneHour);
+      this.totalDailyCookies += oneHour;
+      console.log(this.cookiesEachHour);
+    }
+  },
 
   render: function () {
     this.calcCustomersEachHour();
@@ -67,6 +69,10 @@ const seattle = {
       li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
       ul.appendChild(li);
     }
+
+    const li = document.createElement("li");
+    li.textContent = `Total: ${this.totalDailyCookies} cookies`;
+    ul.appendChild(li);
   },
 };
 
