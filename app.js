@@ -33,13 +33,21 @@ const seattle = {
         randomNum(this.minCustPerHour, this.maxCustPerHour)
       );
     }
-    console.log(this.customersEachHour);
+    // console.log(this.customersEachHour);
   },
 
- 
+  calcCookiesEachHour: function() {
+    for (let i = 0; i < hours.length; i++) {
+  const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerCust);
+  this.cookiesEachHour.push(oneHour);
+  this.totalDailyCookies += oneHour;
+  console.log(this.cookiesEachHour);
+    }  
+},
 
   render: function () {
     this.calcCustomersEachHour();
+    this.calcCookiesEachHour();
 
     const parentElement = document.getElementById("container");
     console.log(parentElement);
