@@ -2,3 +2,15 @@ body {
     box-sizing: border-box;
     
 }
+
+table,
+th,
+td {
+    border: 1px solid darkgray;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.5rem;
+}
