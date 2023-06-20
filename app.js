@@ -1,8 +1,8 @@
 "use strict"
-
 console.log("Testing...")
 
 const container = document.getElementById("container");
+const storeTable = document.getElementById("store-table");
 
 const hours = [
   "6am",
@@ -24,16 +24,18 @@ const hours = [
 
 //Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
 
-function Location(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerHour, customersEachHour, cookiesEachHour, totalDailyCookies) {
+function randomNum(min, max) {
+    return Math.floor(Math.random() * (max-min + 1) + min);
+}
+
+function Location(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerHour) {
     this.storeName = storeName;
     this.minCustPerHour = minCustPerHour;
     this.maxCustPerHour = maxCustPerHour;
     this.avgCookiesPerHour = avgCookiesPerHour; 
-    this.customersEachHour = customersEachHour;
-    this.cookiesEachHour = cookiesEachHour;
-    this.totalDailyCookies = totalDailyCookies;
-    this.calcCustomersEachHour();
-    this.calcCookiesEachHour();
+    this.customersEachHour = [];
+    this.cookiesEachHour = [];
+    this.totalDailyCookies = 0;
     this.render();
 }
 
@@ -48,53 +50,73 @@ Location.prototype.calcCustomersEachHour = function () {
 
 Location.prototype.calcCookiesEachHour = function () {
     for (let i = 0; i < hours.length; i++) {
-        const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerHour);
+        let oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerHour);
         this.cookiesEachHour.push(oneHour);
-        this.totalDailyCookies =+ oneHour;
+        this.totalDailyCookies += oneHour;
         // console.log(this.cookiesEachHour)
     }
-}
-
-Location.prototype.render = function () {
-    const article = document.createElement("article");
-    container.appendChild(article);
-
-    const h3 = document.createElement("h3");
-    h3.textContent = this.storeName;
-    article.appendChild(h3);
-
-    const ul = document.createElement("ul");
-    article.appendChild(ul);
-
-    for (let i = 0; i < hours.length; i++) {
-      const li = document.createElement("li");
-      li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-      ul.appendChild(li);
-    }
-
-    const li = document.createElement("li");
-    li.textContent = `Total cookies: ${this.totalDailyCookies}`;
-    ul.appendChild(li);
-}
-
-const seattle = new Location("seattle", 23, 65, 6.3, [],[], 0);
-// console.log(seattle)
-const tokyo = new Location("tokyo", 3, 24, 1.2, [], [], 0);
-const dubai = new Location("dubai", 11, 38, 3.7, [], [], 0);
-const paris = new Location("paris", 20, 38, 2.3, [], [], 0);
-const lima = new Location("lima", 2, 16, 4.6, [], [], 0);
-
-function randomNum(min, max) {
-    return Math.floor(Math.random() * (max-min + 1) + min);
-}
+};
 
 
-//Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
-
-
+//Replace the lists of your data for each store and build a single table of data instead. 
 
 //Display each stores data in a table format similar to what is below. Break each column by the hour and complete each row with a “Daily Location Total”.
 
 //1. Each cookie stand location should have a separate render() method that creates and appends its row to the table
 //2. The header row and footer row are each created in their own stand-alone function
 // NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).
+
+// Location.prototype.headerRowFunc = function (){
+//     const headerRow = document.createElement("tr");
+//     table.appendChild(headerRow);
+
+//     for (let i = 0; i < hours.length; i++) {
+//         const hoursHeader = document.createElement("th");
+//         hoursHeader.textContent = `${hours[i]}` /* ${totalDailyCookies}*/;
+//         headerRow.appendChild(hoursHeader);
+//     }
+// } headerRowFunc();
+
+
+
+
+Location.prototype.render = function () {
+    this.calcCustomersEachHour();
+    this.calcCookiesEachHour();
+
+    //create table row
+    const tr = document.createElement("tr");
+
+    //create table data cell/data header
+    const th = document.createElement("th");
+    th.textContent = this.storeName;
+
+    //append table data to row
+    tr.appendChild(th);
+
+    // loop through cookiesEachHour - create td for each index and append to tr
+    for (let i=0; i < hours.length; i++) {
+        const td = document.createElement("td");
+        td.textContent = this.cookiesEachHour[i];
+        tr.appendChild(td);
+    }
+
+    // create th to display totals and append to tr
+    const storeTotal = document.createElement("th");
+    storeTotal.textContent = this.totalDailyCookies;
+    tr.appendChild(storeTotal);
+
+    //append tr to table (storeTable)
+    storeTable.appendChild(tr);
+
+
+}
+
+
+
+    const seattle = new Location("seattle", 23, 65, 6.3);
+    console.log(seattle)
+    const tokyo = new Location("tokyo", 3, 24, 1.2,);
+    const dubai = new Location("dubai", 11, 38, 3.7,);
+    const paris = new Location("paris", 20, 38, 2.3,);
+    const lima = new Location("lima", 2, 16, 4.6,);
