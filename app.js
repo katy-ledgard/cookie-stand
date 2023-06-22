@@ -58,6 +58,9 @@ Location.prototype.calcCookiesEachHour = function () {
     }
 };
 
+// Location.prototype.calcHourlyTotal = function () {
+//     for (let i = 0; i < )
+// }
 
 
 // console.log(getHeaderRow);
@@ -131,15 +134,30 @@ function getHeaderRow() {
     //create total cell
 
     const totalCell = document.createElement("th");
-    totalCell.textContent = "Total";
+    totalCell.textContent = "Daily Location Total";
     headerRow.appendChild(totalCell);
 }
 
-// function getFooterRow() {
+function getFooterRow() {
 
+    //create footer row
+    const footerRow = document.createElement("tr");
+    storeTable.appendChild(footerRow);
+
+//create totals cell
+const totalFooter = document.createElement("th");
+totalFooter.textContent = "Hourly Total";
+footerRow.appendChild(totalFooter)
+
+//create totals data
+// for (let i = 0; i < hours.length; i++) {
+// const hourTotals = document.createElement("th");
+// hoursTotal.textContent = 
 // }
 
+}
 getHeaderRow();
+// getFooterRow();
 
     const seattle = new Location("seattle", 23, 65, 6.3);
     // console.log(seattle)

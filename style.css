@@ -117,7 +117,7 @@ li a {
 /* table */
 
 #container {
-    margin-top: 1.5rem;
+    margin: 2rem auto;
     display: flex;
     justify-content: center;
 }
@@ -166,4 +166,6 @@ label input {
 footer {
     min-height: 100px;
     background-color: var(--salmon);
+    
+
 }
