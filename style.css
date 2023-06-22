@@ -22,9 +22,6 @@ img {
 
 }
 
-#container {
-    margin-top: 1.5rem;;
-}
 
 h2 {
     text-align: center;
@@ -119,6 +116,12 @@ li a {
 
 /* table */
 
+#container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
 table,
 th,
 td {
@@ -135,19 +138,29 @@ td {
 form {
     border:1px solid var(--salmon);
     padding: 10px;
-    margin: 10px;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
-fieldset legend {
+fieldset {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
     
 }
 
 input {
-    display: block;
+   max-width: 200px;
     margin-bottom: 0.5rem;
 }
 
+label input {
+    margin: 0 auto;
+}
 /* footer */
 
 footer {

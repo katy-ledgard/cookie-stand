@@ -59,13 +59,9 @@ Location.prototype.calcCookiesEachHour = function () {
 };
 
 
-//Replace the lists of your data for each store and build a single table of data instead. 
 
-//Display each stores data in a table format similar to what is below. Break each column by the hour and complete each row with a “Daily Location Total”.
+// console.log(getHeaderRow);
 
-//1. Each cookie stand location should have a separate render() method that creates and appends its row to the table
-//2. The header row and footer row are each created in their own stand-alone function
-// NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).
 
 // Location.prototype.headerRowFunc = function (){
 //     const headerRow = document.createElement("tr");
@@ -85,8 +81,9 @@ Location.prototype.render = function () {
     this.calcCustomersEachHour();
     this.calcCookiesEachHour();
 
-    //create table row
+        //create table row
     const tr = document.createElement("tr");
+    // headerRow.appendChild(tr);
 
     //create table data cell/data header
     const th = document.createElement("th");
@@ -113,8 +110,36 @@ Location.prototype.render = function () {
 
 }
 
+function getHeaderRow() {
+    
+    //create hr element
+    const headerRow = document.createElement("tr");
+    storeTable.appendChild(headerRow);
 
+    //create empty cell
 
+    const emptyCell = document.createElement("th");
+    headerRow.appendChild(emptyCell);
+
+    //create hours cells
+    for (let i = 0; i < hours.length; i++) {
+        const hoursHeader = document.createElement("th");
+        hoursHeader.textContent = hours[i];
+        headerRow.appendChild(hoursHeader);
+    }
+
+    //create total cell
+
+    const totalCell = document.createElement("th");
+    totalCell.textContent = "Total";
+    headerRow.appendChild(totalCell);
+}
+
+// function getFooterRow() {
+
+// }
+
+getHeaderRow();
 
     const seattle = new Location("seattle", 23, 65, 6.3);
     // console.log(seattle)
