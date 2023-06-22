@@ -132,6 +132,11 @@ td {
 }
 
 /* form */
+form {
+    border:1px solid var(--salmon);
+    padding: 10px;
+    margin: 10px;
+}
 
 fieldset legend {
     text-align: center;

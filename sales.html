@@ -10,17 +10,17 @@
 <body>
     <header></header>
     <main>
-        <form class="container">
+        <form id = "store-form">
             <fieldset>
-                <legend>Store Data</legend>
+                <legend>Enter New Cookie Store</legend>
                 <label for = "store-name"> Store Name</label>
-                <input type = "text" id = "store-name" name = "store-name"  placeholder = "Store Name"  >
+                <input type = "text" id = "store-name" name = "storeName"  placeholder = "Store Name"  >
                 <label for = "min-customers" > Minimum Customers Per Hour</label>
-                <input type = "number" id = "min-customers" name = "min-cust-per-hour"  placeholder = "0" />
+                <input type = "number" id = "min-customers" name = "minCustPerHour"  placeholder = "0" />
                 <label for = "max-customers">Maximum Customers Per Hour</label>
-                <input type="number" id = "max-customers" name = "max-cust-per-hour"  placeholder = "0"  />
+                <input type="number" id = "max-customers" name = "maxCustPerHour"  placeholder = "0"  />
                 <label for = "avg-cookies"> Average Cookies Purchased Per Customer</label>
-                <input type="number" id ="avg-cookies" name = "avg-cookies-per-cust" placeholder = "0" />
+                <input type="number" step = "0.1" id ="avg-cookies" name = "avgCookies" placeholder = "0" />
                 <button type="submit">Submit</button>
     
     

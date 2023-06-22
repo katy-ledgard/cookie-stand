@@ -3,6 +3,7 @@ console.log("Testing...")
 
 const container = document.getElementById("container");
 const storeTable = document.getElementById("store-table");
+const storeForm = document.getElementById("store-form");
 
 const hours = [
   "6am",
@@ -114,9 +115,27 @@ Location.prototype.render = function () {
 
 
 
+
     const seattle = new Location("seattle", 23, 65, 6.3);
-    console.log(seattle)
+    // console.log(seattle)
     const tokyo = new Location("tokyo", 3, 24, 1.2,);
     const dubai = new Location("dubai", 11, 38, 3.7,);
     const paris = new Location("paris", 20, 38, 2.3,);
     const lima = new Location("lima", 2, 16, 4.6,);
+
+    storeForm.addEventListener("submit", function (event){
+        event.preventDefault();
+        console.log("hi");
+        const storeName = event.target.storeName.value;
+        const minCustPerHour = event.target.minCustPerHour.value;
+        const maxCustPerHour = event.target.maxCustPerHour.value;
+        const avgCookiesPerHour = event.target.avgCookies.value;
+    
+        const newStore = new Location(storeName, minCustPerHour, maxCustPerHour, avgCookiesPerHour);
+        console.log(newStore);
+
+        // newStore.render();
+        storeForm.reset();
+    });
+
+   
