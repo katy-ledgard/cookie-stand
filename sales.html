@@ -40,11 +40,11 @@
                 <label for = "store-name"> Store Name</label>
                 <input type = "text" id = "store-name" name = "storeName"  placeholder = "Store Name"  >
                 <label for = "min-customers" > Minimum Customers Per Hour</label>
-                <input type = "number" id = "min-customers" name = "minCustPerHour"  placeholder = "0" />
+                <input type = "number" min = "0"  id = "min-customers" name = "minCustPerHour"  placeholder = "0" />
                 <label for = "max-customers">Maximum Customers Per Hour</label>
-                <input type="number" id = "max-customers" name = "maxCustPerHour"  placeholder = "0"  />
+                <input type="number" min = "0"  id = "max-customers" name = "maxCustPerHour"  placeholder = "0"  />
                 <label for = "avg-cookies"> Average Cookies Purchased Per Customer</label>
-                <input type="number" step = "0.1" id ="avg-cookies" name = "avgCookies" placeholder = "0" />
+                <input type="number" step = "0.1" min = "0" id ="avg-cookies" name = "avgCookies" placeholder = "0" />
                 <button type="submit">Submit</button>
     
     

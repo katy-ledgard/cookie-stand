@@ -16,6 +16,7 @@ body {
 body {
     background-color: var(--body-background);
 }
+
 img {
     width: 100%;
     display: block;
@@ -138,19 +139,31 @@ li a:hover {
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
+    padding-bottom: 2em;
+}
+
+.locations-container img {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 1em;
 }
 
 
 .location-card {
     /* width: 30%; */
-    min-width: 300px;
+    min-width: 350px;
     min-height: 300px;
     background-color: var(--background-colour);
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-shrink: 0;
     border-radius: 1rem;
 
 }
+
+span.heading {
+    color: var(--accent);
+    display: block;
+    }
 
 
 .open-hours-container {
@@ -238,13 +251,14 @@ footer p h4 h5 {
 
 .footer-container {
     display: inline-flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-wrap: wrap;
+    align-content: center;
     
 
 }
 
-.contact-container {
+/* .contact-container {
     margin: 1rem;
     
     
@@ -258,4 +272,4 @@ footer p h4 h5 {
     display: inline;
     
 		
-}
+} */
