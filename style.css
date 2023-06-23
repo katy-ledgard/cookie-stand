@@ -8,8 +8,14 @@ body {
 :root {
     --salmon: #FA8072;
     --background-colour: #f8ddda;
+    --text: #383d3b;
+    --accent: #586994;
+    --body-background: #f5f2ee;
 }
 
+body {
+    background-color: var(--body-background);
+}
 img {
     width: 100%;
     display: block;
@@ -22,19 +28,44 @@ img {
 
 }
 
+h1 {
+    font-family: 'Cookie', cursive, monospace, 'Gill Sans', sans-serif;
+    font-size: 4rem;
+    color: var(--text);
+}
+
 
 h2 {
     text-align: center;
-    font-size: 2rem;;
+    font-size: 2.5rem;
+    font-family: 'Ysabeau Office', sans-serif;
+    color: var(--accent);
 }
 
 h3 {
     text-align: center;
-    font-size: 1.5 rem;;
+    font-size: 1.75rem;
+    font-family: 'Ysabeau Office', sans-serif;
+    color: var(--accent);
+}
+
+h4 {
+    font-family: 'Ysabeau Office', sans-serif;
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-family: 'Ysabeau Office', sans-serif;
+    color: var(--accent);
+    font-size: 1.25rem;
 }
 
 p {
     text-align: center;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 1.25rem;
+    
 }
 
 /* header */
@@ -46,11 +77,12 @@ header {
 .logo-img {
     min-width: 200px;
     max-width: 200px;
+    margin-top: 1rem;
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 
@@ -65,11 +97,16 @@ nav li {
     padding: 5px;
     margin: 5px;
     list-style: none;
+    font-size: 1.25rem;
 }
 
 li a {
     text-decoration: none;
-    color: black;
+    color: var(--text);
+}
+
+li a:hover {
+    color: var(--accent)
 }
 
 
@@ -77,6 +114,23 @@ li a {
 
 .main-container {
    width: 90%;
+}
+
+
+.about-container {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    }
+
+    .about {
+    width: 100%;
+    min-height: 200px;
+    background-color: var(--background-colour);
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-top: 3rem;
+    border-radius: 1rem;
 }
 
 .locations-container {
@@ -88,13 +142,16 @@ li a {
 
 
 .location-card {
-    width: 30%;
+    /* width: 30%; */
+    min-width: 300px;
     min-height: 300px;
     background-color: var(--background-colour);
     flex-grow: 1;
     flex-shrink: 0;
+    border-radius: 1rem;
 
 }
+
 
 .open-hours-container {
     display:flex;
@@ -103,7 +160,6 @@ li a {
     
 } 
 
-
 .open-hours {
     width: 100%;
     min-height: 200px;
@@ -111,6 +167,7 @@ li a {
     flex-grow: 1;
     flex-shrink: 0;
     margin-bottom: 30px;
+    border-radius: 1rem;
 
 }
 
@@ -127,6 +184,8 @@ th,
 td {
     border: 1px solid darkgray;
     border-collapse: collapse;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 1.25rem;
 }
 
 th,
@@ -140,6 +199,8 @@ form {
     padding: 10px;
     margin: 20px auto;
     max-width: 800px;
+    font-family: 'Ysabeau Office', sans-serif;
+    font-size: 1.25rem;
 }
 
 fieldset {
@@ -166,6 +227,35 @@ label input {
 footer {
     min-height: 100px;
     background-color: var(--salmon);
+    width: 100%;
+    
+}
+
+footer p h4 h5 {
+    text-align: center;
+    
+}
+
+.footer-container {
+    display: inline-flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
     
 
+}
+
+.contact-container {
+    margin: 1rem;
+    
+    
+}
+
+.contact-container > h5, p {
+    margin: 0;
+	padding: 0;
+	border: 0;
+    text-align: center;
+    display: inline;
+    
+		
 }
