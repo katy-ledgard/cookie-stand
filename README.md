@@ -18,4 +18,6 @@ Image by <a href="https://pixabay.com/users/12019-12019/?utm_source=link-attribu
 
 Photo by Craig Adderley: https://www.pexels.com/photo/man-laughing-while-sitting-on-office-chair-1546912/ 
 
+Photo by Suzy Hazelwood: https://www.pexels.com/photo/ingredients-on-table-1184265/
+
 
